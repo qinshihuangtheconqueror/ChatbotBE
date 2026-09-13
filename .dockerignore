@@ -1,0 +1,46 @@
+# ── Node ──────────────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Build output (Docker builds fresh inside container) ───────────────────────
+dist/
+build/
+coverage/
+
+# ── TypeScript incremental cache ───────────────────────────────────────────────
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# ── Env files — injected via env_file / environment at runtime ────────────────
+.env
+.env.*
+
+# ── Git ───────────────────────────────────────────────────────────────────────
+.git/
+.gitignore
+
+# ── Xenova / HuggingFace model cache (large download, mounted as volume) ──────
+.cache/
+models/
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── Editor / OS ───────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ── Tests & docs ──────────────────────────────────────────────────────────────
+test/
+*.spec.ts
+docs/
+README.md
+CHANGELOG.md
+
+# ── Seed scripts (not needed in runtime image) ────────────────────────────────
+# scripts/ => We need scripts/seed-milvus.js

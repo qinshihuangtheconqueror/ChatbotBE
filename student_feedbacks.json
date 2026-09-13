@@ -1,0 +1,122 @@
+{
+  "status": "success",
+  "data": {
+    "total_feedbacks": 11,
+    "total_participating_students": 1,
+    "participating_student_ids": [
+      "20224854"
+    ],
+    "feedbacks": [
+      {
+        "studentId": "20224854",
+        "threadId": "8f4fa973-5471-44ab-805a-38a2c01e9e02",
+        "messageId": "9899504d-0acc-4e23-be6d-c7772beb6683",
+        "userQuestion": "tư vấn đăng kí học tập để đạt 3.9 cpa",
+        "botAnswer": "Chào bạn Việt Hoàng,\n\nĐể đạt được CPA 3.9, bạn có thể cân nhắc cải thiện điểm các học phần sau:\n\n*   **IT3170 - Thuật toán ứng dụng** (2 tín chỉ): Điểm hiện tại là C. Đây là môn có tiềm năng tăng điểm cao nhất.\n*   **IT3180 - Nhập môn công nghệ phần mềm** (3 tín chỉ): Điểm hiện tại là B.\n*   **MI2020 - Xác suất thống kê** (3 tín chỉ): Điểm hiện tại là B.\n*   **PH1120 - Vật lý đại cương II** (3 tín chỉ): Điểm hiện tại là B.\n*   **IT3100 - Lập trình hướng đối tượng** (2 tín chỉ): Điểm hiện tại là B.\n\nLưu ý: Danh sách trên là gợi ý. Bạn BẮT BUỘT phải tự kiểm tra Đề cương môn học (xem học phần Tiên quyết/Song hành) và theo dõi lịch mở lớp thực tế trên CTT vào đợt đăng ký để có quyết định chính xác nhất.\n\n_Tra cứu điểm và chương trình đào tạo tại: https://qldt.hust.edu.vn/students/learn/personal-transcript_",
+        "status": "DISLIKE 👎",
+        "comment": "không tự tra luôn kỳ mở cũng như học phần tiên quyết",
+        "timestamp": "2026-05-21T00:10:01.922Z"
+      },
+      {
+        "studentId": "20224854",
+        "threadId": "8f4fa973-5471-44ab-805a-38a2c01e9e02",
+        "messageId": "a379497d-9414-4006-a1b5-6bab560401a4",
+        "userQuestion": "tư vấn đăng kí học tập để đạt 3.9 cpa",
+        "botAnswer": "Chào bạn Việt Hoàng,\n\nĐể đạt được CPA 3.9, bạn có thể cân nhắc cải thiện điểm các học phần sau:\n\n*   **IT3170 - Thuật toán ứng dụng** (2 tín chỉ): Điểm hiện tại là C. Đây là môn có tiềm năng tăng điểm cao nhất.\n*   **IT3180 - Nhập môn công nghệ phần mềm** (3 tín chỉ): Điểm hiện tại là B.\n*   **MI2020 - Xác suất thống kê** (3 tín chỉ): Điểm hiện tại là B.\n*   **PH1120 - Vật lý đại cương II** (3 tín chỉ): Điểm hiện tại là B.\n*   **IT3100 - Lập trình hướng đối tượng** (2 tín chỉ): Điểm hiện tại là B.\n\nLưu ý: Danh sách trên là gợi ý. Bạn BẮT BUỘT phải tự kiểm tra Đề cương môn học (xem học phần Tiên quyết/Song hành) và theo dõi lịch mở lớp thực tế trên CTT vào đợt đăng ký để có quyết định chính xác nhất.\n\n_Tra cứu điểm và chương trình đào tạo tại: https://qldt.hust.edu.vn/students/learn/personal-transcript_",
+        "status": "LIKE 👍",
+        "comment": "OK",
+        "timestamp": "2026-05-21T00:08:44.465Z"
+      },
+      {
+        "studentId": "20224854",
+        "threadId": "8f4fa973-5471-44ab-805a-38a2c01e9e02",
+        "messageId": "3935e099-b08b-49f1-93df-bacbf4fb8505",
+        "userQuestion": "tư vấn đăng kí học tập để đạt 3.9 cpa",
+        "botAnswer": "Chào bạn Việt Hoàng,\n\nĐể đạt được CPA 3.9, bạn có thể cân nhắc cải thiện điểm các học phần sau:\n\n*   **IT3170 - Thuật toán ứng dụng** (2 tín chỉ): Điểm hiện tại là C. Đây là môn có tiềm năng tăng điểm cao nhất.\n*   **IT3180 - Nhập môn công nghệ phần mềm** (3 tín chỉ): Điểm hiện tại là B.\n*   **MI2020 - Xác suất thống kê** (3 tín chỉ): Điểm hiện tại là B.\n*   **PH1120 - Vật lý đại cương II** (3 tín chỉ): Điểm hiện tại là B.\n*   **IT3100 - Lập trình hướng đối tượng** (2 tín chỉ): Điểm hiện tại là B.\n\nLưu ý: Danh sách trên là gợi ý. Bạn BẮT BUỘT phải tự kiểm tra Đề cương môn học (xem học phần Tiên quyết/Song hành) và theo dõi lịch mở lớp thực tế trên CTT vào đợt đăng ký để có quyết định chính xác nhất.\n\n_Tra cứu điểm và chương trình đào tạo tại: https://qldt.hust.edu.vn/students/learn/personal-transcript_",
+        "status": "LIKE 👍",
+        "comment": "giao diện đẹp",
+        "timestamp": "2026-05-21T00:08:15.989Z"
+      },
+      {
+        "studentId": "20224854",
+        "threadId": "8819f229-d000-4636-ab3b-65a5e5a74f19",
+        "messageId": "97532f9d-168b-4756-9b28-021f6ad488d6",
+        "userQuestion": "xin tài liệu môn cnpm",
+        "botAnswer": "Chào bạn, mình thấy bạn đang tìm tài liệu môn \"CNPM\". Có phải bạn đang muốn tìm tài liệu môn **IT3180 - NHẬP MÔN CÔNG NGHỆ PHẦN MỀM** không nhỉ?\n\nNếu đúng là môn này, mình có một số thông tin và tài liệu cho bạn đây:\n\n*   **Tên đầy đủ:** NHẬP MÔN CÔNG NGHỆ PHẦN MỀM (Introduction to Software Engineering)\n*   **Mã môn:** IT3180\n*   **Số tín chỉ:** 3\n*   **Tính chất:** Bắt buộc\n*   **Trọng số điểm cuối kỳ:** 60% (Điểm quá trình chiếm 40%)\n*   **Học kỳ đề xuất:** 5\n*   **Giảng viên:** Vũ Thị Hương Giang\n\n**Mô tả môn học:**\nMôn học này sẽ cung cấp cho bạn các kiến thức về vòng đời phát triển phần mềm, từ ý tưởng đến khi phần mềm không còn được sử dụng. Bạn sẽ được học về các quy trình phát triển phần mềm hiện đại (thác nước, mẫu thử, xoắn ốc, lặp, linh hoạt), quản lý dự án, quản lý cấu hình, phiên bản và đảm bảo chất lượng phần mềm. Đồng thời, bạn cũng sẽ được trải nghiệm phát triển phần mềm thực tế qua bài tập lớn và rèn luyện kỹ năng làm việc nhóm, thuyết trình.\n\n**Tài liệu tham khảo:**\n- [**Slide bài giảng:**  https://storage.googleapis.com/hust-files/2022-10-18/6202707547258880/02._slide_bai_giang_(pdf)_14.7m.7z](https://storage.googleapis.com/hust-files/2022-10-18/6202707547258880/02._slide_bai_giang_(pdf)_14.7m.7z)\n*   **Đề cương môn học:** [https://storage.googleapis.com/hust-files/2025-10-10/1760086952835/6202707547258880/it3180_it1_nhap_mon_cong_nghe_phan_mem_94.9k.docx](https://storage.googleapis.com/hust-files/2025-10-10/1760086952835/6202707547258880/it3180_it1_nhap_mon_cong_nghe_phan_mem_94.9k.docx)\n\nChúc bạn học tốt môn này nhé! Nếu bạn cần tìm tài liệu môn khác, cứ hỏi mình nha.",
+        "status": "LIKE 👍",
+        "comment": "",
+        "timestamp": "2026-05-21T00:06:09.771Z"
+      },
+      {
+        "studentId": "20224854",
+        "threadId": "2279e4a3-f415-4c17-8812-9a014c30a3da",
+        "messageId": "30aaeb2c-1634-44f9-84d8-edca2d8524b6",
+        "userQuestion": "bon jour",
+        "botAnswer": "Chào bạn, mình là HustVA, trợ lý học thuật của Đại học Bách Khoa Hà Nội. Rất vui được hỗ trợ bạn!\n\nBạn có câu hỏi hay cần mình giúp đỡ về vấn đề học tập, quy chế của trường không? Hãy cho mình biết nhé! 😊",
+        "status": "LIKE 👍",
+        "comment": "",
+        "timestamp": "2026-05-20T23:37:34.636Z"
+      },
+      {
+        "studentId": "20224854",
+        "threadId": "92104940-9356-4a4f-b30f-d97ccdfb80c0",
+        "messageId": "c5f55609-f45d-49c2-9ead-ddd0f4439149",
+        "userQuestion": "cho tôi bảng điểm kì trước",
+        "botAnswer": "Chào bạn Việt Hoàng,\n\nDưới đây là bảng điểm của bạn trong học kỳ 20251:\n\n| Mã học phần | Tên học phần | Số tín chỉ | Điểm quá trình | Điểm cuối kỳ | Điểm chữ |\n|---|---|---|---|---|---|\n| IT3940 | PROJECT III | 3 | 10 | 9.5 | A+ |\n| IT4613 | Hệ gợi ý | 3 | 10 | 7.5 | A |\n| IT4930 | Nhập môn Khoa học dữ liệu | 2 | 9.5 | 9.5 | A+ |\n| IT4991 | Thực tập kỹ thuật | 2 | 9 | 9 | A |\n| IT3090 | CƠ SỞ DỮ LIỆU | 3 | 10 | 8.5 | A |\n| IT4931 | Lưu trữ và xử lý dữ liệu lớn | 3 | 10 | 7 | B+ |\n| IT4906 | Tính toán tiến hóa | 3 | 10 | 9 | A |\n\nNếu bạn cần xem thêm bảng điểm của các học kỳ khác hoặc có bất kỳ câu hỏi nào, đừng ngần ngại hỏi mình nhé!\n\n_Tra cứu điểm và chương trình đào tạo tại: https://qldt.hust.edu.vn/students/learn/personal-transcript_",
+        "status": "LIKE 👍",
+        "comment": "",
+        "timestamp": "2026-05-20T22:45:44.630Z"
+      },
+      {
+        "studentId": "20224854",
+        "threadId": "316c2b4d-8b44-4c38-b145-3bb9de0a5914",
+        "messageId": "8808439f-9284-4fb1-8d3c-b2e2e07111ce",
+        "userQuestion": "quy định về bhyt",
+        "botAnswer": "Chào bạn Phạm Việt Hoàng,\n\nVề quy định Bảo hiểm Y tế (BHYT) tại trường, đây là thông tin chi tiết dành cho bạn:\n\n**1. Bảo hiểm Y tế (BHYT) Bắt buộc:**\n\n*   **Đối tượng:** Tất cả sinh viên đang theo học tại trường (từ K69 trở về trước và K70) đều phải tham gia BHYT theo quy định của Luật Bảo hiểm Y tế.\n*   **Thời gian tham gia và số tiền đóng:**\n    *   **Đối với sinh viên K69 trở về trước (BHYT năm 2026):**\n        *   Thời gian: Từ 01/01/2026 đến 31/12/2026 (12 tháng).\n        *   Số tiền: **631.800 đồng** (12 tháng x 52.650 đồng/tháng).\n        *   Hình thức nộp: Nộp cùng học phí học kỳ 1 năm học 2025-2026.\n    *   **Đối với sinh viên K70 (BHYT bắt buộc):**\n        *   Thời gian: Từ 01/10/2025 đến 31/12/2026 (15 tháng).\n        *   Số tiền: **789.750 đồng** (15 tháng x 52.650 đồng/tháng).\n        *   Hình thức nộp: Nộp cùng tiền nhập học đầu khóa.\n*   **Lưu ý quan trọng:**\n    *   **Bắt buộc tham gia:** Sinh viên không tham gia BHYT sẽ bị xem xét kỷ luật và có thể bị gián đoạn thời gian tham gia BHYT 5 năm liên tục, ảnh hưởng đến quyền lợi khám chữa bệnh.\n    *   **Thẻ BHYT điện tử:** Hiện nay không phát hành thẻ BHYT giấy. Sinh viên sử dụng thẻ BHYT điện tử trên ứng dụng VssID hoặc VNeID (định danh điện tử mức độ 2) để khám chữa bệnh.\n- [**Mã BHXH:** Sinh viên có thể tra cứu Mã BHXH (SV401 + Mã BHXH) tại thông tin cá nhân trên trang https://qldt.hust.edu.vn](https://qldt.hust.edu.vn/) hoặc tra cứu Mã số BHXH (10 số) tại [https://baohiemxahoi.gov.vn/tracuu/Pages/tra-cuu-ho-gia-dinh.aspx](https://baohiemxahoi.gov.vn/tracuu/Pages/tra-cuu-ho-gia-dinh.aspx).\n    *   **Trường hợp ưu tiên:** Sinh viên đã có thẻ BHYT theo diện ưu tiên (hộ nghèo, cận nghèo, con liệt sỹ/thương binh, v.v.) cần đăng ký trước thời hạn để không phải nộp tiền tại trường. Nếu đã nộp, trường sẽ hoàn trả sau khi xác minh.\n    *   **Thẻ BHYT Hộ gia đình:** Không phải diện ưu tiên, sinh viên vẫn phải tham gia BHYT tại trường.\n\n**2. Bảo hiểm Thân thể Tự nguyện (dành cho Tân sinh viên K70):**\n\nĐây là bảo hiểm tự nguyện nhằm đáp ứng nhu cầu bảo hiểm rủi ro tai nạn và trợ cấp nằm viện - phẫu thuật, được Ban Công tác Sinh viên phối hợp với Trung tâm Y tế Bách Khoa và Bảo hiểm PJICO triển khai.\n\n*   **Phí bảo hiểm:** **200.000 đồng/4 năm** (Bảo hiểm 24/24 trong suốt thời gian học).\n*   **Số tiền bảo hiểm:** 10.000.000 đồng.\n*   **Quyền lợi bảo hiểm:**\n    *   **Điều kiện A (Sinh mạng):** Tử vong do ốm đau, bệnh tật được trả 10.000.000 đồng.\n    *   **Điều kiện B (Tai nạn):** Thương tật thân thể hoặc tử vong do tai nạn được trả theo quy định của PJICO.\n    *   **Điều kiện C (Trợ cấp phẫu thuật):** Được trả trợ cấp khi có phẫu thuật (ruột thừa, dạ dày, trĩ, viêm xoang, sỏi thận, v.v.).\n    *   **Điều kiện D (Trợ cấp nằm viện):** Được trả trợ cấp nằm viện do ốm đau, bệnh tật, thương tật thân thể (Tây Y 50.000 đồng/ngày, Đông Y 20.000 đồng/ngày, không quá 180 ngày/năm).\n*   **Quyền lợi khác:** Bảo hiểm miễn phí cho con liệt sỹ, thương binh, học sinh mồ côi cả cha lẫn mẹ.\n*   **Thủ tục thanh toán:** Nộp hồ sơ yêu cầu trả tiền bảo hiểm và chứng từ y tế tại Trung tâm Y tế Bách Khoa (Số 5 Tạ Quang Bửu).\n*   **Hiệu lực Bảo hiểm:** Từ 01/10/2025 đến 30/09/2029.\n\nNếu bạn cần tư vấn hoặc hỗ trợ thêm về BHYT, bạn có thể liên hệ cô Nghiêm Thị Kim Chi:\n*   **Điện thoại:** 024.3869.3108\n*   **Email:** [Chi.nghiemthikim@hust.edu.vn](mailto:Chi.nghiemthikim@hust.edu.vn)\n\nHy vọng thông tin này hữu ích cho bạn!\n- [*Tài liệu tham khảo:**\n- CTSVThông báo về việc mua Bảo hiểm y tế (BHYT) bổ sung năm 2026](https://ctt.hust.edu.vn/DisplayWeb/DisplayBaiViet?baiviet=46597)\n- [3. K70 Bảo hiểm thân thể tự nguyện dành cho Tân sinh viên](https://ctsv.hust.edu.vn/#/nhap-hoc/thong-tin/136/k70-bao-hiem-than-the-tu-nguyen-danh-cho-tan-sinh-vien)\n- [20. Thông tin về mua bảo hiểm y tế (bắt buộc) cho sinh viên khóa 70](https://ctsv.hust.edu.vn/#/nhap-hoc/thong-tin/51/thong-tin-ve-mua-bao-hiem-y-te-bat-buoc-cho-sinh-vien-khoa-70)\n- [CTSVK70 Bảo hiểm thân thể tự nguyện dành cho Tân sinh viên](https://ctt.hust.edu.vn/DisplayWeb/DisplayBaiViet?baiviet=44557)\n- [CTSVThông báo về việc mua Bảo hiểm y tế (BHYT) năm 2026](https://ctt.hust.edu.vn/DisplayWeb/DisplayBaiViet?baiviet=44565)",
+        "status": "DISLIKE 👎",
+        "comment": "f",
+        "timestamp": "2026-05-19T02:23:54.435Z"
+      },
+      {
+        "studentId": "20224854",
+        "threadId": "47952ab2-6268-4c4c-b482-af69f012479d",
+        "messageId": "d94b9c5a-40ed-476e-9be6-227ce77e7281",
+        "userQuestion": "vbee có đề tài gì không",
+        "botAnswer": "Chào bạn,\n\nHệ thống đã tìm thấy một số đề tài nghiên cứu của cô Nguyễn Thị Thu Trang (Trường Công nghệ Thông tin và Truyền thông) có liên quan đến công ty Vbee:\n\n*   **Hệ thống quản lý và cung cấp dịch vụ STT on-cloud**\n    *   Mô tả: Xây dựng hệ thống cho phép người dùng sử dụng và quản lý dịch vụ Speech-To-Text (STT) online. Sinh viên có cơ hội thực tập tại công ty Vbee.\n    *   Công nghệ: ReactJS, NodeJS, MongoDB, AWS.\n    *   Loại đề tài: TT, ĐATN, TTTN, ĐAMH\n*   **Microservices và hệ thống quản lý và thực thi callbot**\n    *   Mô tả: Xây dựng hệ thống quản lý các mẫu callbot, cho phép người dùng chỉnh sửa kịch bản và thực hiện chiến dịch. Sinh viên có cơ hội thực tập tại công ty Vbee.\n    *   Công nghệ: ReactJS, NodeJS, MongoDB, AWS.\n    *   Loại đề tài: TT, ĐATN, TTTN, ĐAMH, SVNCKH\n\nHy vọng thông tin này hữu ích cho bạn!",
+        "status": "LIKE 👍",
+        "comment": "",
+        "timestamp": "2026-05-18T09:28:46.665Z"
+      },
+      {
+        "studentId": "20224854",
+        "threadId": "47952ab2-6268-4c4c-b482-af69f012479d",
+        "messageId": "e55f298f-c2e3-48ab-81fc-c6e8c26b5a63",
+        "userQuestion": "vbee có đề tài gì không",
+        "botAnswer": "Chào bạn,\n\nHệ thống đã tìm thấy một số đề tài nghiên cứu của cô Nguyễn Thị Thu Trang (Trường Công nghệ Thông tin và Truyền thông) có liên quan đến công ty Vbee:\n\n*   **Hệ thống quản lý và cung cấp dịch vụ STT on-cloud**\n    *   Mô tả: Xây dựng hệ thống cho phép người dùng sử dụng và quản lý dịch vụ Speech-To-Text (STT) online. Sinh viên có cơ hội thực tập tại công ty Vbee.\n    *   Công nghệ: ReactJS, NodeJS, MongoDB, AWS.\n    *   Loại đề tài: TT, ĐATN, TTTN, ĐAMH\n*   **Microservices và hệ thống quản lý và thực thi callbot**\n    *   Mô tả: Xây dựng hệ thống quản lý các mẫu callbot, cho phép người dùng chỉnh sửa kịch bản và thực hiện chiến dịch. Sinh viên có cơ hội thực tập tại công ty Vbee.\n    *   Công nghệ: ReactJS, NodeJS, MongoDB, AWS.\n    *   Loại đề tài: TT, ĐATN, TTTN, ĐAMH, SVNCKH\n\nHy vọng thông tin này hữu ích cho bạn!",
+        "status": "LIKE 👍",
+        "comment": "",
+        "timestamp": "2026-05-18T09:28:14.978Z"
+      },
+      {
+        "studentId": "20224854",
+        "threadId": "47952ab2-6268-4c4c-b482-af69f012479d",
+        "messageId": "66a06a11-38e4-49d5-a71a-43532f2dcc87",
+        "userQuestion": "vbee có đề tài gì không",
+        "botAnswer": "Chào bạn,\n\nHệ thống đã tìm thấy một số đề tài nghiên cứu của cô Nguyễn Thị Thu Trang (Trường Công nghệ Thông tin và Truyền thông) có liên quan đến công ty Vbee:\n\n*   **Hệ thống quản lý và cung cấp dịch vụ STT on-cloud**\n    *   Mô tả: Xây dựng hệ thống cho phép người dùng sử dụng và quản lý dịch vụ Speech-To-Text (STT) online. Sinh viên có cơ hội thực tập tại công ty Vbee.\n    *   Công nghệ: ReactJS, NodeJS, MongoDB, AWS.\n    *   Loại đề tài: TT, ĐATN, TTTN, ĐAMH\n*   **Microservices và hệ thống quản lý và thực thi callbot**\n    *   Mô tả: Xây dựng hệ thống quản lý các mẫu callbot, cho phép người dùng chỉnh sửa kịch bản và thực hiện chiến dịch. Sinh viên có cơ hội thực tập tại công ty Vbee.\n    *   Công nghệ: ReactJS, NodeJS, MongoDB, AWS.\n    *   Loại đề tài: TT, ĐATN, TTTN, ĐAMH, SVNCKH\n\nHy vọng thông tin này hữu ích cho bạn!",
+        "status": "LIKE 👍",
+        "comment": "",
+        "timestamp": "2026-05-18T09:25:44.402Z"
+      },
+      {
+        "studentId": "20224854",
+        "threadId": "da91992c-4efa-46d5-be2e-d20e38724a64",
+        "messageId": "cedc2110-58da-4fc3-8312-d991839b0531",
+        "userQuestion": "tra điểm môn vldc1",
+        "botAnswer": "Chào bạn Việt Hoàng,\n\nMình đã tra cứu điểm môn **MI1110 (Giải tích 1)** của bạn. Kết quả như sau:\n\n*   **Điểm tổng kết:** 8.5 (B+)\n\nBạn có thể xem chi tiết điểm các thành phần trên hệ thống SIS nhé.",
+        "status": "DISLIKE 👎",
+        "comment": "đần",
+        "timestamp": "2026-05-18T08:38:39.963Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+
+> hustva-v3@3.0.0 start:dev
+> ts-node -r tsconfig-paths/register src/server/main.ts
+
+[dotenv@17.3.1] injecting env (41) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[SignalRouter] Loaded intents from D:\Project 2- GR 2\HUSTVA-V3\src\agent\intents.json 
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMongooseModule dependencies initialized[39m[38;5;3m +51ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScheduleModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMongooseCoreModule dependencies initialized[39m[38;5;3m +64ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mChatController {/v1/chat}:[39m[38;5;3m +35ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/chat/respond, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/chat/stream, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/chat/feedback, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mHealthController {/health}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/health, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/v1/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/demo-login, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/microsoft-login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mHistoryController {/v1/history}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/history/threads, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/history/threads/:threadId, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/history/threads/:threadId, DELETE} route[39m[38;5;3m +0ms[39m
+[AgentProvider] Building AgentFacade... 
+[Neo4jClient] Neo4j driver created { uri: 'bolt://localhost:7688' }
+[PromptLoader] Prompt index loaded { count: 3 }
+[Checkpointer] Creating MongoDBSaver checkpointer 
+[AgentProvider] AgentFacade ready 
+[32m[Nest] 25212  - [39m04/17/2026, 12:23:04 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +291ms[39m
+🚀 HustVA V3 running on http://localhost:3001
+[MilvusSearchClient] Milvus collection exists { collection: 'hust_knowledge' }
+[AgentProvider] ✅ Milvus ONLINE — collection "hust_knowledge" ready 
+[ChatController] respond {
+  thread: 'test-thread-3c0a9d70-e34a-4e47-a2a4-9e1f1e532327',
+  student: '202416773'
+}
+[AgentFacade] invoke start {
+  thread: 'test-thread-3c0a9d70-e34a-4e47-a2a4-9e1f1e532327',
+  student: '202416773'
+}
+[LangfuseTracingProvider] Langfuse CallbackHandler created {
+  baseUrl: 'https://us.cloud.langfuse.com',
+  background: 'false',
+  session: 'test-thread-3c0a9d70-e34a-4e47-a2a4-9e1f1e532327'
+}
+[LoadContextNode] History loaded {
+  threadId: 'test-thread-3c0a9d70-e34a-4e47-a2a4-9e1f1e532327',
+  turns: 0
+}
+[LoadContextNode] student_context cache HIT { studentId: '202416773' }
+[RewriteNode] Question rewritten {
+  raw: 'GPA kỳ mới nhất của tôi là bao nhiêu',
+  rewritten: 'GPA kỳ mới nhất của tôi là bao nhiêu'
+}
+[RuleRouterNode] RuleRouter matched {
+  rule: 'academic_current',
+  skills: [ 'academic' ],
+  intent: 'Kết quả học tập kỳ hiện tại',
+  confidence: 0.9,
+  query: 'GPA kỳ mới nhất của tôi là bao nhiêu'
+}
+[ExecuteSkillsNode] Executing skills in parallel { skills: [ 'academic' ], iteration: 0 }
+[AcademicSkill] 🚨 ACADEMIC SKILL EXECUTED | target_semester=null | resolved_semester=20252 
+[AcademicSkill] Fetching academic data { studentId: '202416773', semester: '20252' }
+[AcademicSkill] Academic data fetched {
+  studentId: '202416773',
+  semester: '20252',
+  gradeCount: 8,
+  gpa: null,
+  cpa: null
+}
+[EnrichCheckNode] Rule 1: Academic warning level=1 → adding policy_search 
+[EnrichCheckNode] Enrichment needed — scheduling additional skills { additional_skills: [ 'policy_search' ], iteration: 1 }
+[ExecuteSkillsNode] Executing skills in parallel { skills: [ 'policy_search' ], iteration: 1 }
+[MilvusSearchClient] Hybrid search starting {
+  original: 'GPA kỳ mới nhất của tôi là bao nhiêu',
+  normalized: 'điểm trung bình học kỳ kỳ mới nhất của tôi là bao nhiêu',
+  hybridMode: true
+}
+[MilvusSearchClient] Loading BAAI/bge-m3 model (first call — may take ~30s to download)... 
+[MilvusSearchClient] BGE-M3 model loaded (1024-dim, cls pooling) 
+[MilvusSearchClient] Milvus hybrid ANN done { dense: 30, keyword: 30 }
+[MilvusSearchClient] Loading Xenova/bge-reranker-base for cross-encoder reranking... 
+[MilvusSearchClient] BGE-Reranker loaded (cross-encoder, quantized) 
+[MilvusSearchClient] Reranking done {
+  before: [
+    '0.621', '0.520',
+    '0.602', '0.534',
+    '0.552', '0.541',
+    '0.542', '0.540',
+    '0.536', '0.523',
+    '0.515', '0.512'
+  ],
+  after: [
+    '1.000', '1.000',
+    '1.000', '1.000',
+    '1.000', '1.000',
+    '1.000', '1.000',
+    '1.000', '1.000'
+  ]
+}
+[PolicySearchSkill] Policy search done {
+  query: 'GPA kỳ mới nhất của tôi là bao nhiêu',
+  found: 3,
+  mode: 'direct'
+}
+[EnrichCheckNode] Context sufficient — proceeding to compose { iteration: 1 }
+[ComposeNode] Compose done { length: 633 }
+[FinalizeNode] History saved { threadId: 'test-thread-3c0a9d70-e34a-4e47-a2a4-9e1f1e532327' }
+[ChatController] respond {
+  thread: 'test-thread-36f0eb6b-952e-48ac-b589-2b5561a3816b',
+  student: '202416773'
+}
+[AgentFacade] invoke start {
+  thread: 'test-thread-36f0eb6b-952e-48ac-b589-2b5561a3816b',
+  student: '202416773'
+}
+[LangfuseTracingProvider] Langfuse CallbackHandler created {
+  baseUrl: 'https://us.cloud.langfuse.com',
+  background: 'false',
+  session: 'test-thread-36f0eb6b-952e-48ac-b589-2b5561a3816b'
+}
+[LoadContextNode] History loaded {
+  threadId: 'test-thread-36f0eb6b-952e-48ac-b589-2b5561a3816b',
+  turns: 0
+}
+[LoadContextNode] Prefetching student profile from eHUST { studentId: '202416773' }
+[LoadContextNode] student_context prefetched {
+  studentId: '202416773',
+  fullName: 'NGUYỄN HOÀNG ANH',
+  program: 'CTTT An toàn không gian số - Cyber Security 2024',
+  semesters: 3
+}
+[RewriteNode] Question rewritten {
+  raw: 'GPA kỳ mới nhất của tôi là bao nhiêu',
+  rewritten: 'GPA kỳ mới nhất của tôi là bao nhiêu'
+}
+[RuleRouterNode] RuleRouter matched {
+  rule: 'academic_current',
+  skills: [ 'academic' ],
+  intent: 'Kết quả học tập kỳ hiện tại',
+  confidence: 0.9,
+  query: 'GPA kỳ mới nhất của tôi là bao nhiêu'
+}
+[ExecuteSkillsNode] Executing skills in parallel { skills: [ 'academic' ], iteration: 0 }
+[AcademicSkill] 🚨 ACADEMIC SKILL EXECUTED | target_semester=null | resolved_semester=20252 
+[AcademicSkill] Fetching academic data { studentId: '202416773', semester: '20252' }
+[AcademicSkill] Academic data fetched {
+  studentId: '202416773',
+  semester: '20252',
+  gradeCount: 8,
+  gpa: null,
+  cpa: null
+}
+[EnrichCheckNode] Rule 1: Academic warning level=1 → adding policy_search 
+[EnrichCheckNode] Enrichment needed — scheduling additional skills { additional_skills: [ 'policy_search' ], iteration: 1 }
+[ExecuteSkillsNode] Executing skills in parallel { skills: [ 'policy_search' ], iteration: 1 }
+[MilvusSearchClient] Hybrid search starting {
+  original: 'GPA kỳ mới nhất của tôi là bao nhiêu',
+  normalized: 'điểm trung bình học kỳ kỳ mới nhất của tôi là bao nhiêu',
+  hybridMode: true
+}
+[MilvusSearchClient] Milvus hybrid ANN done { dense: 30, keyword: 30 }
+[MilvusSearchClient] Reranking done {
+  before: [
+    '0.621', '0.520',
+    '0.602', '0.534',
+    '0.552', '0.541',
+    '0.542', '0.540',
+    '0.536', '0.523',
+    '0.515', '0.512'
+  ],
+  after: [
+    '1.000', '1.000',
+    '1.000', '1.000',
+    '1.000', '1.000',
+    '1.000', '1.000',
+    '1.000', '1.000'
+  ]
+}
+[PolicySearchSkill] Policy search done {
+  query: 'GPA kỳ mới nhất của tôi là bao nhiêu',
+  found: 3,
+  mode: 'direct'
+}
+[EnrichCheckNode] Context sufficient — proceeding to compose { iteration: 1 }
+[ComposeNode] Compose done { length: 692 }
+[FinalizeNode] History saved { threadId: 'test-thread-36f0eb6b-952e-48ac-b589-2b5561a3816b' }

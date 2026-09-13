@@ -1,0 +1,29 @@
+
+--- 🚀 Hỏi: GPA kỳ mới nhất của tôi là bao nhiêu
+🤖 Bot: {
+  run_id: 'cc369872-65ae-4d56-b379-9160fcbeeaa2',
+  thread_id: 'test-thread-700a4eb2-c693-4d66-b3d3-84c0a142b9bd',
+  request_id: 'cc369872-65ae-4d56-b379-9160fcbeeaa2',
+  status: 'completed',
+  assistant: {
+    text: 'Chào bạn NGUYỄN HOÀNG ANH,\n' +
+      '\n' +
+      'GPA kỳ mới nhất đã được tính của bạn là **2.97** cho kỳ 20251.\n' +
+      '\n' +
+      'Hiện tại, GPA cho kỳ 20252 của bạn chưa được tính toán và công bố. Bạn có thể theo dõi thêm thông báo từ Trường để cập nhật kết quả học tập của kỳ này nhé.\n' +
+      '\n' +
+      '**🔗 Thông tin tham khảo:**\n' +
+      '- Về việc ban hành Quy chế đào tạo của Đại học Bách khoa Hà Nội: https://drive.google.com/file/d/1U-sF4Pt_RLnmHyHneKW5BK4vzp3XU50T/view\n' +
+      '- SỔ TAY SINH VIÊN NĂM HỌC 2025-2026: https://drive.google.com/file/d/1NusgX5zIL0Xp-B5TKZByJVi0bDBuG8HG/view\n' +
+      '- ACADEMIC REGULATIONS: https://ctt.hust.edu.vn/Upload/Nguy%E1%BB%85n%20Qu%E1%BB%91c%20%C4%90%E1%BA%A1t/files/DTDH_QDQC/Hoctap/03_1%20HUST%27s%20ACADEMIC%20REGULATIONS-2025_Final.pdf\n' +
+      '\n' +
+      '_Bạn vui lòng kiểm tra lại thông tin tại https://ctt-sis.hust.edu.vn/ để có thông tin chính xác nhất._',
+    citations: [ [Object], [Object], [Object] ]
+  },
+  meta: {
+    skills_used: [ 'academic', 'policy_search' ],
+    intent: 'Kết quả học tập kỳ hiện tại',
+    latency_ms: 31795,
+    tokens: { input_tokens: 4908, output_tokens: 93, total_tokens: 5525 }
+  }
+}

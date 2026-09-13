@@ -1,0 +1,1 @@
+export interface SupervisorSubAgents { academicAgent: any; scheduleAgent: any; facultyAgent: any; }

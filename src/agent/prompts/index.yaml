@@ -1,0 +1,10 @@
+prompts:
+  route:
+    file: templates/route.prompt.txt
+    description: "Routing prompt — classify student query to select skills"
+  compose:
+    file: templates/compose.prompt.txt
+    description: "Compose prompt — synthesize final answer from skill results"
+  rewrite:
+    file: templates/rewrite.prompt.txt
+    description: "Rewrite prompt — expand vague/short student questions into clear queries"

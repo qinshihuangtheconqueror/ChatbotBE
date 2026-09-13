@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HustVA — Feedback Tracing</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #F7F8FA; color: #262626; }
+        .header { background: #fff; border-bottom: 1px solid #F0F0F0; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
+        .header h1 { font-size: 20px; font-weight: 700; }
+        .header h1 span { color: #3370FF; }
+        .container { max-width: 1200px; margin: 24px auto; padding: 0 16px; }
+        .controls { display: flex; gap: 12px; margin-bottom: 16px; align-items: center; flex-wrap: wrap; }
+        .controls label { font-size: 13px; color: #595959; }
+        .controls select, .controls input { padding: 6px 12px; border: 1px solid #D9D9D9; border-radius: 6px; font-size: 13px; background: #fff; }
+        .controls button { padding: 6px 16px; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-weight: 500; }
+        .btn-primary { background: #3370FF; color: #fff; }
+        .btn-primary:hover { background: #2B5FDB; }
+        .btn-ghost { background: #fff; border: 1px solid #D9D9D9; color: #262626; }
+        .stats { display: flex; gap: 16px; margin-bottom: 16px; }
+        .stat-card { background: #fff; border: 1px solid #F0F0F0; border-radius: 8px; padding: 12px 20px; font-size: 13px; }
+        .stat-card strong { font-size: 20px; display: block; margin-top: 4px; }
+        .stat-card.like strong { color: #52C41A; }
+        .stat-card.dislike strong { color: #FF4D4F; }
+        table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid #F0F0F0; }
+        thead th { background: #FAFAFA; text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; text-transform: uppercase; color: #595959; border-bottom: 1px solid #F0F0F0; }
+        tbody td { padding: 10px 12px; font-size: 13px; border-bottom: 1px solid #F0F0F0; vertical-align: top; }
+        tbody tr:hover { background: #F0F5FF; }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+        .tag-like { background: #F6FFED; color: #52C41A; border: 1px solid #B7EB8F; }
+        .tag-dislike { background: #FFF2F0; color: #FF4D4F; border: 1px solid #FFA39E; }
+        .truncate { max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .expand { cursor: pointer; color: #3370FF; font-size: 12px; }
+        .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+        .pagination button { padding: 6px 12px; border: 1px solid #D9D9D9; border-radius: 6px; background: #fff; cursor: pointer; font-size: 13px; }
+        .pagination button.active { background: #3370FF; color: #fff; border-color: #3370FF; }
+        .pagination button:disabled { opacity: 0.4; cursor: not-allowed; }
+        .empty { text-align: center; padding: 48px; color: #BFBFBF; font-size: 14px; }
+        .login-form { max-width: 360px; margin: 80px auto; background: #fff; padding: 32px; border-radius: 12px; border: 1px solid #F0F0F0; }
+        .login-form h2 { text-align: center; margin-bottom: 24px; }
+        .login-form input { width: 100%; padding: 10px 12px; border: 1px solid #D9D9D9; border-radius: 6px; margin-bottom: 12px; font-size: 14px; }
+        .login-form button { width: 100%; padding: 10px; background: #3370FF; color: #fff; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; font-weight: 500; }
+        .hidden { display: none; }
+        .comment-cell { max-width: 200px; word-wrap: break-word; font-style: italic; color: #595959; }
+    </style>
+</head>
+<body>
+    <!-- Login Form -->
+    <div id="login-section" class="login-form">
+        <h2><span style="color:#3370FF">HustVA</span> Admin</h2>
+        <input id="email" type="email" placeholder="Email (admin@hust.edu.vn)" value="admin@hust.edu.vn">
+        <input id="password" type="password" placeholder="Password" value="admin123">
+        <button onclick="login()">Đăng nhập</button>
+        <p id="login-error" style="color:#FF4D4F;margin-top:8px;font-size:13px;text-align:center"></p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-section" class="hidden">
+        <div class="header">
+            <h1><span>HustVA</span> — Feedback Tracing</h1>
+            <button class="btn-ghost" onclick="logout()">Đăng xuất</button>
+        </div>
+        <div class="container">
+            <div class="stats" id="stats"></div>
+            <div class="controls">
+                <label>Filter:</label>
+                <select id="filter-like" onchange="loadFeedbacks(1)">
+                    <option value="">Tất cả</option>
+                    <option value="true">👍 Like</option>
+                    <option value="false">👎 Dislike</option>
+                </select>
+                <label>Hiển thị:</label>
+                <select id="page-size" onchange="loadFeedbacks(1)">
+                    <option value="10">10</option>
+                    <option value="20" selected>20</option>
+                    <option value="50">50</option>
+                </select>
+                <button class="btn-primary" onclick="loadFeedbacks(currentPage)">🔄 Refresh</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Student</th>
+                        <th>Câu hỏi</th>
+                        <th>Phản hồi Bot</th>
+                        <th>Đánh giá</th>
+                        <th>Comment</th>
+                        <th>Thời gian</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+            <div id="empty" class="empty hidden">Chưa có feedback nào.</div>
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </div>
+
+    <script>
+        const BASE = localStorage.getItem('hustva_admin_base') || 'http://localhost:3000';
+        let token = localStorage.getItem('hustva_admin_token') || '';
+        let currentPage = 1;
+
+        // Auto-login if token exists
+        if (token) { showMain(); loadFeedbacks(1); }
+
+        async function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            try {
+                const r = await fetch(`${BASE}/v1/auth/login`, {
+                    method: 'POST', headers: {'Content-Type':'application/json'},
+                    body: JSON.stringify({studentId: email, password})
+                });
+                if (!r.ok) {
+                    // Try demo login
+                    const r2 = await fetch(`${BASE}/v1/auth/demo-login`, {
+                        method: 'POST', headers: {'Content-Type':'application/json'},
+                        body: JSON.stringify({studentId: 'admin', password})
+                    });
+                    if (!r2.ok) throw new Error('Login failed');
+                    const data2 = await r2.json();
+                    token = data2.access_token || data2.token;
+                } else {
+                    const data = await r.json();
+                    token = data.access_token || data.token;
+                }
+                localStorage.setItem('hustva_admin_token', token);
+                showMain();
+                loadFeedbacks(1);
+            } catch(e) {
+                document.getElementById('login-error').textContent = 'Đăng nhập thất bại: ' + e.message;
+            }
+        }
+
+        function logout() {
+            token = '';
+            localStorage.removeItem('hustva_admin_token');
+            document.getElementById('main-section').classList.add('hidden');
+            document.getElementById('login-section').classList.remove('hidden');
+        }
+
+        function showMain() {
+            document.getElementById('login-section').classList.add('hidden');
+            document.getElementById('main-section').classList.remove('hidden');
+        }
+
+        async function loadFeedbacks(page) {
+            currentPage = page;
+            const limit = document.getElementById('page-size').value;
+            const like = document.getElementById('filter-like').value;
+            let url = `${BASE}/v1/admin/feedbacks?page=${page}&limit=${limit}`;
+            if (like) url += `&like=${like}`;
+
+            try {
+                const r = await fetch(url, { headers: { 'Authorization': `Bearer ${token}` } });
+                if (r.status === 401) { logout(); return; }
+                const data = await r.json();
+                renderTable(data.items || [], page, parseInt(limit));
+                renderPagination(data.total || 0, page, parseInt(limit));
+                renderStats(data);
+            } catch(e) {
+                document.getElementById('tbody').innerHTML = `<tr><td colspan="7" style="text-align:center;color:#FF4D4F">Lỗi: ${e.message}</td></tr>`;
+            }
+        }
+
+        function renderTable(items, page, limit) {
+            const tbody = document.getElementById('tbody');
+            const empty = document.getElementById('empty');
+            if (!items.length) {
+                tbody.innerHTML = '';
+                empty.classList.remove('hidden');
+                return;
+            }
+            empty.classList.add('hidden');
+            tbody.innerHTML = items.map((item, i) => `
+                <tr>
+                    <td>${(page-1)*limit + i + 1}</td>
+                    <td><code>${item.studentId || '—'}</code></td>
+                    <td class="truncate" title="${esc(item.question)}">${esc(item.question?.slice(0,80))}</td>
+                    <td class="truncate" title="${esc(item.answer)}">${esc(item.answer?.slice(0,80))}</td>
+                    <td>${item.like ? '<span class="tag tag-like">👍 Like</span>' : '<span class="tag tag-dislike">👎 Dislike</span>'}</td>
+                    <td class="comment-cell">${esc(item.comment) || '—'}</td>
+                    <td style="white-space:nowrap">${item.timestamp ? new Date(item.timestamp).toLocaleString('vi-VN') : '—'}</td>
+                </tr>
+            `).join('');
+        }
+
+        function renderPagination(total, page, limit) {
+            const pages = Math.ceil(total / limit);
+            const div = document.getElementById('pagination');
+            if (pages <= 1) { div.innerHTML = ''; return; }
+            let html = `<button ${page<=1?'disabled':''} onclick="loadFeedbacks(${page-1})">←</button>`;
+            for (let i = 1; i <= Math.min(pages, 10); i++) {
+                html += `<button class="${i===page?'active':''}" onclick="loadFeedbacks(${i})">${i}</button>`;
+            }
+            if (pages > 10) html += `<span>... ${pages}</span>`;
+            html += `<button ${page>=pages?'disabled':''} onclick="loadFeedbacks(${page+1})">→</button>`;
+            div.innerHTML = html;
+        }
+
+        function renderStats(data) {
+            const total = data.total || 0;
+            document.getElementById('stats').innerHTML = `
+                <div class="stat-card">Tổng feedback<strong>${total}</strong></div>
+            `;
+        }
+
+        function esc(s) { if (!s) return ''; const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+    </script>
+</body>
+</html>
