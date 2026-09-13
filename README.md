@@ -1,6 +1,6 @@
-# HustVA V3 — Backend
+# AI Chatbot Platform — Backend
 
-HUST Academic Assistant powered by **NestJS + LangGraph + Gemini + Milvus + Neo4j**.
+An intelligent conversational AI platform powered by **NestJS + LangGraph + Gemini + Milvus + Neo4j**.
 
 ---
 
@@ -14,163 +14,155 @@ HUST Academic Assistant powered by **NestJS + LangGraph + Gemini + Milvus + Neo4
 
 ---
 
-## 1. Cấu trúc Repo
+## 1. Repository Structure
 
 ```
-d:\Project 2- GR 2\
-├── docker-compose.dev.yml          ← Tổng tư lệnh: khởi động toàn bộ 8 services
-├── HustVA-V3/                      ← Backend NestJS (repo này)
+.
+├── docker-compose.dev.yml          ← Orchestrates all services
+├── Backend/                        ← NestJS Backend (this repo)
 │   ├── Dockerfile
-│   ├── .env                        ← ⚠️ KHÔNG commit — điền thủ công
-│   ├── .env.example                ← Mẫu env có comment hướng dẫn
+│   ├── .env                        ← ⚠️ DO NOT commit — manual configuration required
+│   ├── .env.example                ← Sample environment variables
 │   ├── docs/
-│   │   └── ENV_CONFIGURATION.md    ← Hướng dẫn chi tiết cấu hình env
+│   │   └── ENV_CONFIGURATION.md    ← Detailed environment configuration guide
 │   ├── src/
 │   │   ├── agent/                  ← LangGraph agent logic
 │   │   ├── server/                 ← NestJS controllers, services
 │   │   └── common/data/
 │   │       ├── credentials.json    ← Demo login (bcrypt hashed)
-│   │       └── knowledge_base.json ← ⚠️ KHÔNG commit (2.8MB) — seed thủ công
+│   │       └── knowledge_base.json ← ⚠️ DO NOT commit (large file) — manual seed required
 │   └── scripts/
-│       ├── seed-milvus.js          ← Seed knowledge base vào Milvus
-│       ├── batch-eval-v3.js        ← Đánh giá RAG hàng loạt (regression test)
-│       └── quick-test-rag.js       ← Test nhanh RAG pipeline
-└── HUSTVA-V3-FE/                   ← Frontend React Widget
-    └── chatbot-livechat-frontend/
-        └── Dockerfile
+│       ├── seed-milvus.js          ← Seeds knowledge base into Milvus
+│       ├── batch-eval-v3.js        ← Batch evaluation for RAG pipeline
+│       └── quick-test-rag.js       ← Quick RAG pipeline testing script
+└── Frontend/                       ← React Chat Widget
+    └── Dockerfile
 ```
 
 ---
 
-## 2. Deploy Dev (Docker — Recommended)
+## 2. Dev Deployment (Docker — Recommended)
 
-> Chạy toàn bộ hệ thống (FE + BE + MongoDB + Redis + Milvus + Neo4j) bằng **1 lệnh duy nhất** từ thư mục gốc:
+> Run the entire system (Frontend + Backend + MongoDB + Redis + Milvus + Neo4j) using **a single command**.
 
-### Bước 1: Chuẩn bị file môi trường
+### Step 1: Prepare Environment File
 
 ```bash
-cd HustVA-V3
 cp .env.example .env
-# Điền các biến bắt buộc (xem docs/ENV_CONFIGURATION.md để biết chi tiết)
+# Fill in required variables (see docs/ENV_CONFIGURATION.md for details)
 ```
 
-Các biến **bắt buộc** phải điền:
+**Required** variables:
 
-| Biến | Mô tả | Lấy ở đâu |
-|---|---|---|
-| `GEMINI_API_KEY` | Google Gemini API key | [Google AI Studio](https://aistudio.google.com/apikey) |
-| `JWT_SECRET` | Chuỗi random để ký JWT | `openssl rand -hex 32` hoặc tự đặt |
-| `HUST_API_TOKEN` | eHUST partner API token | Quản trị viên eHUST |
-| `HUST_AUTHORIZATION_TOKEN` | Bearer token eHUST | Cùng nguồn |
-| `MS_CLIENT_ID` | Azure App Client ID | [Azure Portal](https://portal.azure.com) |
-| `MS_CLIENT_SECRET` | Azure App Secret | Azure Portal → Certificates & secrets |
+| Variable | Description |
+|---|---|
+| `GEMINI_API_KEY` | Google Gemini API key |
+| `JWT_SECRET` | Random string to sign JWTs (`openssl rand -hex 32`) |
+| `MS_CLIENT_ID` | Azure App Client ID |
+| `MS_CLIENT_SECRET` | Azure App Secret |
 
-### Bước 2: Build và khởi động
+### Step 2: Build and Start
 
 ```bash
-# Từ thư mục gốc (d:\Project 2- GR 2\)
 docker compose -f docker-compose.dev.yml up -d --build
 ```
 
-### Bước 3: Seed Knowledge Base vào Milvus (chạy 1 lần)
+### Step 3: Seed Knowledge Base to Milvus (Run Once)
 
 ```bash
-docker exec -it hustva-v3-be-1 npm run seed:milvus
+docker exec -it backend-service npm run seed:milvus
 ```
 
-> **Lưu ý:** Neo4j **không cần seed thủ công**. Dữ liệu đồ thị sinh viên (điểm, môn học) tự động được tạo khi sinh viên đăng nhập lần đầu.
+> **Note:** Neo4j **does not require manual seeding**. Graph data is dynamically created when users log in.
 
-### Services sau khi khởi động
+### Running Services
 
-| Service | Port | Mục đích |
+| Service | Port | Purpose |
 |---|---|---|
 | **Frontend (Nginx)** | **80** | Chat widget UI |
 | **Backend (NestJS)** | **3000** | REST API + SSE |
 | MongoDB | 27017 | Conversation threads |
 | Redis | 6379 | Cache + Rate limiting |
-| Neo4j Browser | 7474 | Course graph (debug) |
+| Neo4j Browser | 7474 | Graph explorer (debug) |
 | Neo4j Bolt | 7687 | Graph queries |
 | Milvus | 19530 | Vector search |
 | MinIO Console | 9001 | Object storage (debug) |
 
 ---
 
-## 3. Chạy Local (Development — không Docker)
+## 3. Local Development (Without Docker)
 
 ```bash
-cd HustVA-V3
-cp .env.example .env      # điền các biến cần thiết
+cp .env.example .env      # Fill in required variables
 npm install
 npm run start:dev         # ts-node watch mode
 ```
 
-Server chạy tại `http://localhost:3000`.
+Server runs on `http://localhost:3000`.
 
 ---
 
 ## 4. Demo Login Credentials
 
-File `src/common/data/credentials.json` — dùng cho test/demo qua endpoint `/v1/auth/demo-login`:
+See `src/common/data/credentials.json` for testing via `/v1/auth/demo-login`:
 
-| Email | Password | MSSV |
+| Email | Password | UserID |
 |---|---|---|
-| sv1@hustva.test | Hustva@2024 | 20225976 |
-| sv2@hustva.test | Hustva@2024 | 20220001 |
-| sv3@hustva.test | Hustva@2024 | 20220002 |
+| demo1@test.com | Demo@2024 | 10001 |
+| demo2@test.com | Demo@2024 | 10002 |
 
-> ⚠️ Mật khẩu được lưu dưới dạng **bcrypt hash** trong file JSON. Không dùng credentials này trên production.
+> ⚠️ Passwords are saved as **bcrypt hash** in the JSON file. Do not use these in production.
 
 ---
 
 ## 5. API Endpoints
 
-### Authentication (Public — không cần JWT)
+### Authentication (Public — No JWT required)
 
-| Method | Path | Mô tả |
+| Method | Path | Description |
 |---|---|---|
-| POST | `/v1/auth/login` | Đăng nhập bằng MSSV + mật khẩu eHUST → JWT |
-| POST | `/v1/auth/demo-login` | Đăng nhập demo (email + password) → JWT |
-| POST | `/v1/auth/microsoft-login` | Đăng nhập bằng Email HUST (OAuth2) → JWT |
+| POST | `/v1/auth/demo-login` | Demo login (email + password) → Returns JWT |
+| POST | `/v1/auth/microsoft-login` | OAuth2 Login via Microsoft → Returns JWT |
 | GET | `/health` | Health check |
 
-### Chat (Yêu cầu JWT — Header: `Authorization: Bearer <token>`)
+### Chat (Requires JWT — Header: `Authorization: Bearer <token>`)
 
-| Method | Path | Mô tả |
+| Method | Path | Description |
 |---|---|---|
-| POST | `/v1/chat/respond` | Chat đồng bộ (response đầy đủ) |
-| POST | `/v1/chat/stream` | Chat SSE streaming (progressive response) |
-| POST | `/v1/chat/feedback` | Gửi đánh giá (like/dislike) cho tin nhắn |
+| POST | `/v1/chat/respond` | Synchronous chat (full response) |
+| POST | `/v1/chat/stream` | SSE streaming chat (progressive response) |
+| POST | `/v1/chat/feedback` | Submit feedback (like/dislike) for AI responses |
 
-### History (Yêu cầu JWT)
+### History (Requires JWT)
 
-| Method | Path | Mô tả |
+| Method | Path | Description |
 |---|---|---|
-| GET | `/v1/history/threads` | Danh sách cuộc trò chuyện (sidebar) |
-| GET | `/v1/history/threads/:threadId` | Chi tiết 1 cuộc trò chuyện |
-| DELETE | `/v1/history/threads/:threadId` | Xóa 1 cuộc trò chuyện |
+| GET | `/v1/history/threads` | List conversation threads (sidebar) |
+| GET | `/v1/history/threads/:threadId` | Get thread details |
+| DELETE | `/v1/history/threads/:threadId` | Delete a thread |
 
-### Ví dụ Chat Stream (SSE)
+### SSE Chat Stream Example
 
 ```bash
 curl -X POST http://localhost:3000/v1/chat/stream \
   -H "Authorization: Bearer <jwt>" \
   -H "Content-Type: application/json" \
-  -d '{"message": "điểm kỳ này của em", "thread_id": "uuid", "student_id": "20225976"}'
+  -d '{"message": "Hello", "thread_id": "uuid", "student_id": "10001"}'
 ```
 
-Events trả về: `message.delta`, `run.completed`, `run.failed`.
+Returns events: `message.delta`, `run.completed`, `run.failed`.
 
 ---
 
-## 6. Kiến trúc
+## 6. Architecture Overview
 
 ```
 Request → AuthMiddleware (JWT required) → RateLimitMiddleware
          → IngressNode (privacy guard)
-         → LoadContextNode (eHUST API → Neo4j)
+         → LoadContextNode (External API → Neo4j)
          → RewriteNode (LLM query rewrite)
          → RuleRouter (regex, ~0ms)
-           ↘ match → ExecuteSkills (10 skills)
+           ↘ match → ExecuteSkills
            ↘ no match → SignalRouter (kNN BGE-M3 + Milvus)
              ↘ confident → ExecuteSkills
              ↘ low conf → ReAct LLM agent
@@ -179,20 +171,20 @@ Request → AuthMiddleware (JWT required) → RateLimitMiddleware
          → FinalizeNode (save thread to MongoDB)
 ```
 
-**Stack:**
+**Tech Stack:**
 - **LLM:** Google Gemini 2.5 Flash
 - **Embedding:** BAAI/bge-m3 (1024-dim, local via @xenova/transformers)
 - **Vector Store:** Milvus Standalone (IVF_FLAT, COSINE)
-- **Graph DB:** Neo4j 5.26 (course prerequisites + student data)
+- **Graph DB:** Neo4j 5.26 
 - **Cache:** Redis 7 (rate limiting + 1h TTL cache)
-- **Checkpoint:** MongoDB 7 (LangGraph thread persistence)
+- **Checkpointing:** MongoDB 7 (LangGraph thread persistence)
 
 ---
 
-## 7. Lưu ý bảo mật
+## 7. Security Notes
 
-- **`.env`** — **KHÔNG BAO GIỜ commit**. Chỉ truyền tay hoặc qua kênh bảo mật.
-- **Mọi endpoint `/v1/chat/*` và `/v1/history/*`** — Bắt buộc JWT. Không có fallback body `student_id`.
-- **CORS** — Chỉ cho phép origin trong `ALLOWED_ORIGINS`. Cấu hình trong `.env`.
-- **JWT_SECRET** — Dùng chuỗi random ≥ 32 ký tự trên production.
-- **`knowledge_base.json`** — Không commit (2.8MB). Copy thủ công lên server trước khi seed.
+- **`.env`** — **NEVER commit**. Only transfer securely.
+- **Endpoints `/v1/chat/*` and `/v1/history/*`** — JWT strictly required.
+- **CORS** — Must be configured securely via `ALLOWED_ORIGINS` in `.env`.
+- **JWT_SECRET** — Use a secure random string (≥ 32 chars) in production.
+- **`knowledge_base.json`** — Not committed due to size. Must be deployed manually before seeding.
